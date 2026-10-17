@@ -21,6 +21,8 @@
 .landing-model-role{font-size:12px;color:#476386;line-height:1.4;margin-top:9px}.landing-model-role strong{color:#214d80}
 .landing-capabilities{display:block;color:#0f62fe;font-size:10px;letter-spacing:.15px;margin-top:12px;padding-top:9px;border-top:1px solid #dce8f8}
 .landing-choices{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.landing-judge-contact{grid-column:2;margin-top:-6px;padding:0 3px}
+@media(max-width:600px){.landing-judge-contact{grid-column:1}}
 .landing-demo-card{display:flex;flex-direction:column;text-decoration:none;border:1px solid #cfdef0;background:white;border-radius:11px;padding:17px 21px;transition:border-color .15s,box-shadow .15s}
 .landing-demo-card:hover{border-color:#0f62fe;box-shadow:0 4px 18px #0f62fe12}.landing-demo-card:focus-visible{outline:3px solid #0f62fe;outline-offset:4px}
 .landing-recorded{border-color:#aecbfa;background:#f0f6ff}.landing-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}

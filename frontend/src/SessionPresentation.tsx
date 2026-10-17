@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { AppSymbol } from './Monitor';
+import { JudgeAccessContact } from './JudgeAccessContact';
 import { productText, actorLabel } from './presentation';
 import type { Answer, Assessment, Event, Preset, Session, Trace } from './types';
 
@@ -21,7 +22,7 @@ export function StartupScreen({ unavailable }: { unavailable: boolean }) {
     {unavailable ? <>
       <section className="service-unavailable panel" role="status" aria-labelledby="service-status-title">
         <div><span className="eyebrow">SERVICE STATUS</span><h2 id="service-status-title">Live Demo temporarily unavailable</h2>
-          <p>We can’t reach the live service right now. You can explore the project below or return home for recorded demos.</p></div>
+          <p>We can’t reach the live service right now. You can explore the project below or return home for recorded demos.</p><JudgeAccessContact/></div>
         <div className="service-actions"><button className="primary" onClick={() => window.location.reload()}>Retry</button></div>
       </section>
       <ProjectIntroduction/>

@@ -10,7 +10,8 @@ SPEC.loader.exec_module(publication)
 
 def test_private_paths_are_blocked_and_examples_are_allowed():
     for name in ["backend/.env", ".data/session.json", "infra/terraform.tfstate.backup",
-                 "infra/terraform.tfvars.json", ".aws/config", "docs/hackathon-submission-checklist.md"]:
+                 "infra/terraform.tfvars.json", ".aws/config", "docs/hackathon-submission-checklist.md",
+                 "docs/submission/video-script.md", "docs/submission/video-voiceover.txt"]:
         assert publication.private_path(name)
     for name in ["backend/.env.example", "infrastructure/terraform/terraform.tfvars.example", "LICENSE"]:
         assert not publication.private_path(name)
@@ -30,6 +31,12 @@ def test_only_documented_test_and_license_exceptions_are_allowed():
     example_arn = "arn:aws:service:eu-west-1:" + "123456789012" + ":resource/example"
     assert publication.scan_text("scripts/tests/example.py", example_arn) == []
     assert publication.scan_text("config.py", example_arn)
+
+
+def test_public_contact_exception_does_not_allow_other_mailboxes():
+    assert publication.scan_text("frontend/src/JudgeAccessContact.tsx", "decider@ibercode.com") == []
+    for address in ["personal" + "@" + "ibercode.com", "decider" + "@" + "private-company.testdomain"]:
+        assert publication.scan_text("README.md", address) == [("README.md", 1, "email")]
 
 
 def test_staged_check_reads_index_not_subsequent_working_copy(tmp_path, monkeypatch):

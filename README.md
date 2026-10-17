@@ -4,13 +4,15 @@
 
 [![Air Traffic Controller Assistant project overview](docs/assets/atc-assistant-overview.png)](https://decider.ibercode.es/recorded)
 
-[**Recorded Demo**](https://decider.ibercode.es/recorded) · [**Live Demo**](https://decider.ibercode.es/live) · [**Reusable Guardrails pattern**](patterns/cited-evidence-guard/README.md) · [**Run locally**](#run-locally)
+[**Demo video**](https://www.youtube.com/watch?v=2uCB2KCBw-A) · [**Recorded Demo**](https://decider.ibercode.es/recorded) · [**Live Demo**](https://decider.ibercode.es/live) · [**Reusable Guardrails pattern**](patterns/cited-evidence-guard/README.md) · [**Run locally**](#run-locally)
 
 What the controller said, what the pilot repeated, and what the aircraft did are three different pieces of evidence. This experimental assistant compares them in fictional airport scenarios, making communication mismatches and missing evidence visible. Amazon Bedrock proposes an explanation; **Strands Decider 2B checks whether its factual findings follow from their cited evidence before publication**.
 
 The controller and pilot are fictional, scripted human roles. Choose a scenario and controller response, then start once: typed messages and aircraft actions advance automatically while you observe. Inspect the assistant's decisions and the evidence behind them; no manual radio input or spoken playback is used. A corrected readback does not prove that the aircraft complied, and stale observations leave the current physical outcome unverified. This is a simulation prototype, not an operational ATC system.
 
 **Start with Recorded Demo:** no sign-in is needed. Its outputs and measured response times come from real previous Decider and Bedrock invocations, not mocked answers; playback makes no new model calls. Live Demo runs new inference and requires an invitation, Cognito login and MFA for judges or authorized testers.
+
+The [demo video](https://www.youtube.com/watch?v=2uCB2KCBw-A) captures a new live **Incorrect readback → Correction only** run. The detailed Guardrails walkthrough below uses a separate **Words versus actions → Correction + observation** recording.
 
 **Inspiration.** The project is inspired by real-world pilot–controller communication problems. [NASA ASRS CALLBACK (May 2000)](https://asrs.arc.nasa.gov/docs/cb/cb_251.pdf) documents misunderstood clearances and confusion between similar call signs. Our scenarios are fictional and do not reconstruct any specific incident; the recorded AI outputs and timings come from real model runs.
 
@@ -49,7 +51,7 @@ The [landing page](https://decider.ibercode.es/) introduces the project with a c
 
 The [Public Recorded Demo](https://decider.ibercode.es/recorded) lets anyone choose one of nine recorded scenario/response combinations and watch the original model decisions, alerts, activity and measured response times. The landing page and playback read static assets only: they do not call the API, Cognito, Decider or Bedrock. They remain available when the backend compute is stopped. Normal static hosting and delivery charges still apply.
 
-[**Live Demo**](https://decider.ibercode.es/live) is reserved for invited AWS hackathon judges and authorized testers. Cognito login and MFA protect session access and new model inference. Access-request contact details will be added later. No public registration or shared credentials are provided.
+[**Live Demo**](https://decider.ibercode.es/live) is reserved for invited AWS hackathon judges and authorized testers. Cognito login and MFA protect session access and new model inference. Judges can request an individual invitation by emailing [decider@ibercode.com](mailto:decider@ibercode.com). Live sessions are subject to compute availability; no public registration or shared credentials are provided.
 
 The public catalog uses a clean replacement for Incorrect readback / Correction only. The first capture, including its recovered timeout, remains in `recordings/v3` as test evidence; the replacement is stored separately. Amber experimental model judgments in other cases are retained and are distinct from runtime errors.
 

@@ -12,6 +12,8 @@ from pathlib import Path
 PRIVATE_PARTS = {".data", ".aws", ".ssh", ".codex", ".agents", ".venv", ".terraform",
                  "node_modules", "__pycache__", ".pytest_cache", ".ruff_cache", "dist"}
 LICENSE_FILES = {"LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md", "frontend/public/third-party-notices.txt"}
+# Owner-approved public project mailbox. Other addresses remain subject to review.
+PUBLIC_CONTACT_EMAILS = {"decider@ibercode.com"}
 PATTERNS = {
     "private_key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA |ENCRYPTED )?PRIVATE KEY-----"),
     "aws_access_key": re.compile(r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b"),
@@ -28,6 +30,7 @@ def private_path(name):
     path = Path(name)
     return (bool(set(path.parts) & PRIVATE_PARTS)
             or name == "docs/hackathon-submission-checklist.md"
+            or name.startswith("docs/submission/video-")
             or (path.name.startswith(".env") and path.name != ".env.example")
             or path.name == "backend.hcl" or path.name.startswith("credentials")
             or re.search(r"\.(?:tfstate|tfplan)(?:\.|$)", path.name) is not None
@@ -42,7 +45,8 @@ def scan_text(name, text):
         for match in pattern.finditer(text):
             if category == "email":
                 domain = match.group(1).lower()
-                if (name in LICENSE_FILES or domain.endswith((".test", ".invalid", "users.noreply.github.com"))
+                if (match.group(0).lower() in PUBLIC_CONTACT_EMAILS or name in LICENSE_FILES
+                        or domain.endswith((".test", ".invalid", "users.noreply.github.com"))
                         or domain in {"example.com", "example.org", "example.net"}):
                     continue
             if category == "aws_account_arn" and is_test and match.group(1) == "123456789012":

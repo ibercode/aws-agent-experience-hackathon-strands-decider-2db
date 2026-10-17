@@ -33,6 +33,8 @@ credentials*
 .idea/
 .vscode/
 /docs/hackathon-submission-checklist.md
+# Private video production materials; never publish to GitHub.
+/docs/submission/video-*
 *.p12
 *.pfx
 *.keystore

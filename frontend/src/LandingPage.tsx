@@ -1,4 +1,5 @@
 import { AppSymbol } from './Monitor';
+import { JudgeAccessContact } from './JudgeAccessContact';
 import hero from './assets/atc-pilot-hero.png';
 import './landing.css';
 
@@ -43,6 +44,7 @@ export default function LandingPage() {
           <p>Sign in with your invited account, choose a scenario and start. Follow new Decider and Bedrock decisions as the conversation plays automatically.</p>
           <div className="landing-card-bottom"><span>Live model calls · Decider 2B + Amazon Bedrock</span><strong>Open live demo <span aria-hidden="true">→</span></strong></div>
         </a>
+        <JudgeAccessContact className="landing-judge-contact"/>
       </section>
     </main>
     <footer className="landing-footer"><span>Fictional scripted communications · AI-generated illustrative people · Advisory prototype</span><span>Reusable pattern: evidence-checked advisory guard</span></footer>

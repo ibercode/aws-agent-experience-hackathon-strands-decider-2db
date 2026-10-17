@@ -263,6 +263,11 @@ footer { color: #8a9bb4; }
 .exercise-home .setup-note { margin-top: 9px; }
 .home-page .signin { margin: 0; width: 100%; padding: 24px; flex-shrink: 0; }
 .home-page .signin p { font-size: 13px; }
+.judge-access-contact { color: #496587; font-size: 13px; line-height: 1.55; }
+.judge-access-contact strong { color: #244a80; font-weight: 600; }
+.judge-access-contact a { color: #0043ce; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.judge-access-contact a:hover { color: #002d9c; }
+.judge-access-contact a:focus-visible { outline: 2px solid #0f62fe; outline-offset: 3px; border-radius: 2px; }
 .startup-page { width: min(1180px, 100%); min-height: 100dvh; margin: 0 auto; padding: clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px; }
 .service-unavailable { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 24px; border-color: #b9cfff; background: #edf5ff; }
 .service-unavailable .eyebrow { color: #0f62fe; margin-bottom: 7px; }
@@ -411,13 +416,14 @@ progress::-moz-progress-bar { background: #4589ff; }
 .setup-step-heading>span{color:#0f62fe}
 .response-section{min-width:0}
 .exercise-home .setup-panel>h3{font-size:13px;font-weight:600;line-height:1.4}
+.setup-heading.live-setup-hint{justify-content:flex-end}
 
 /* Recorded setup instructions and the separate playback action. */
 .recorded-app .setup-instructions{min-width:0;color:#8091ac;font-size:15px;line-height:1.6}
 .recorded-app .setup-instructions ol{margin:0;padding:0;list-style-position:inside}
 .recorded-app .setup-instructions li::marker{color:#0f62fe;font-weight:600}
 .recorded-app .setup-instructions p{margin-top:6px}
-.recorded-app .recording-start{margin-top:24px}
-.recorded-app .recording-start-heading{display:flex;align-items:baseline;gap:7px;margin:0 0 10px;color:#173b70;font-size:15px;font-weight:650;line-height:1.4}
-.recorded-app .recording-start-heading>span{color:#0f62fe}
-.recorded-app .exercise-home .recording-start .run-button{margin-top:0}
+.recorded-app .recording-start,.live-start{margin-top:24px}
+.recorded-app .recording-start-heading,.live-start-heading{display:flex;align-items:baseline;gap:7px;margin:0 0 10px;color:#173b70;font-size:15px;font-weight:650;line-height:1.4}
+.recorded-app .recording-start-heading>span,.live-start-heading>span{color:#0f62fe}
+.recorded-app .exercise-home .recording-start .run-button,.exercise-home .live-start .run-button{margin-top:0}
