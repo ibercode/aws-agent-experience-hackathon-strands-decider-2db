@@ -1,0 +1,84 @@
+{
+  "id": "missing-evidence",
+  "version": "2",
+  "title": "Missing evidence",
+  "description": "The controller corrects a readback mismatch while an observation gap leaves the aircraft’s current position unknown.",
+  "objective": "Resolve the communication issue independently while keeping the physical outcome unverified until fresh evidence arrives.",
+  "durationMs": 38000,
+  "initialDistanceM": 50,
+  "observationGap": true,
+  "initialSetup": {
+    "airport": "Fictional demonstration airport",
+    "runway": "27",
+    "taxiway": "Alpha",
+    "aircraft": "AIR123"
+  },
+  "script": [
+    {
+      "id": "instruction",
+      "atMs": 2000,
+      "type": "trainee_instruction",
+      "actor": "trainee",
+      "text": "AIR123, hold short of runway 27.",
+      "action": "hold"
+    },
+    {
+      "id": "wrong-readback",
+      "atMs": 5000,
+      "type": "pilot_readback",
+      "actor": "pilot",
+      "text": "Lining up runway 27, AIR123."
+    },
+    {
+      "id": "correction",
+      "atMs": 14000,
+      "type": "trainee_instruction",
+      "actor": "trainee",
+      "text": "Negative, AIR123. Hold short of runway 27.",
+      "action": "hold",
+      "presets": [
+        "partial",
+        "complete"
+      ]
+    },
+    {
+      "id": "corrected-readback",
+      "atMs": 18000,
+      "type": "pilot_readback",
+      "actor": "pilot",
+      "text": "Holding short of runway 27, AIR123.",
+      "presets": [
+        "partial",
+        "complete"
+      ]
+    },
+    {
+      "id": "restore-observation",
+      "atMs": 29000,
+      "type": "simulator_action",
+      "actor": "simulator",
+      "text": "Surface observation becomes available.",
+      "action": "restore_observation",
+      "presets": [
+        "complete"
+      ]
+    },
+    {
+      "id": "verify",
+      "atMs": 32000,
+      "type": "trainee_observation_check",
+      "actor": "trainee",
+      "text": "Checks the newly available surface observation.",
+      "presets": [
+        "complete"
+      ]
+    }
+  ],
+  "learningObjectives": [
+    "Missing observations remain unknown",
+    "A confident model answer is not evidence",
+    "Fresh observations can resolve uncertainty"
+  ],
+  "sourceReferences": [],
+  "note": "Experimental ATC assistance demonstration with scripted human controller and pilot roles. Only scenario-allowed observations are available to the assistant. Legacy event names are retained for saved-session compatibility."
+}

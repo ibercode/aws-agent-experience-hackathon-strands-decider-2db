@@ -1,0 +1,10 @@
+Air Traffic Controller Assistant
+Copyright 2026 Air Traffic Controller Assistant contributors
+
+Original project code and documentation are licensed under the Apache License,
+Version 2.0. See LICENSE and THIRD_PARTY_NOTICES.md. Third-party components retain
+their own licenses and notices.
+
+This experimental prototype is independently developed. References to AWS,
+Amazon Bedrock and Strands identify the services and models used; they do not
+imply endorsement or operational aviation certification.

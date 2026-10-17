@@ -1,0 +1,19 @@
+# Allow only deployable source. Credentials, environments, caches, Git history,
+# Terraform state and local test reports never enter the build context.
+**
+!LICENSE
+!THIRD_PARTY_NOTICES.md
+!backend/
+!backend/pyproject.toml
+!backend/requirements-linux-arm64.lock
+!backend/clearance_gap/
+!backend/clearance_gap/*.py
+!backend/Dockerfile
+!scenarios/
+!scenarios/**
+!services/
+!services/decider/
+!services/decider/Dockerfile
+!services/decider/requirements-linux-arm64.lock
+!services/decider/model.json
+!services/decider/serve.py

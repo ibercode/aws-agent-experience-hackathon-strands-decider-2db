@@ -1,0 +1,9 @@
+region       = "eu-west-1"
+domain_name  = "example.com"
+app_hostname = "decider.example.com"
+# Pass your profile to scripts/terraform_with_profile.py; leave aws_profile unset.
+desired_count = 0
+budget_usd    = 100
+# Required: choose your shutdown time in UTC, without a trailing Z.
+# auto_stop_at = "YYYY-MM-DDTHH:MM:SS"
+# budget_email = "YOUR_PRIVATE_ALERT_RECIPIENT"

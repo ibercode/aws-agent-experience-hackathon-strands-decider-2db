@@ -1,0 +1,612 @@
+{
+  "source": "deployed-live-recordings",
+  "cases": [
+    {
+      "case": "incorrect-readback-v3-complete",
+      "scenario": "incorrect-readback",
+      "preset": "complete",
+      "recordedFrames": 27,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "initialMismatchRecordedBeforeScriptEnded": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": true
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "matches",
+      "finalPhysicalEvidence": "holding",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 2014,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 10702,
+          "communication": "mismatch",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 16371,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 24064,
+          "communication": "matches",
+          "physical": "holding"
+        }
+      ],
+      "deciderCalls": 15,
+      "bedrockCalls": 8,
+      "activities": 35,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 14133,
+        "outputTokens": 1140,
+        "totalTokens": 15273
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3626.89,
+      "deciderRequestMedianMs": 3724.32,
+      "recordedAlertLatenciesMs": [
+        4123.07,
+        5999.16
+      ]
+    },
+    {
+      "case": "incorrect-readback-v3-missed",
+      "scenario": "incorrect-readback",
+      "preset": "missed",
+      "recordedFrames": 17,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "initialMismatchRecordedBeforeScriptEnded": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": true
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "mismatch",
+      "finalPhysicalEvidence": "holding",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 199,
+          "communication": "waiting",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 2014,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 10657,
+          "communication": "mismatch",
+          "physical": "holding"
+        }
+      ],
+      "deciderCalls": 8,
+      "bedrockCalls": 4,
+      "activities": 18,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 6907,
+        "outputTokens": 583,
+        "totalTokens": 7490
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3664.98,
+      "deciderRequestMedianMs": 3681.86,
+      "recordedAlertLatenciesMs": [
+        4119.48
+      ]
+    },
+    {
+      "case": "incorrect-readback-v3-partial",
+      "scenario": "incorrect-readback",
+      "preset": "partial",
+      "recordedFrames": 22,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "initialMismatchRecordedBeforeScriptEnded": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": true
+      },
+      "executionClean": false,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "matches",
+      "finalPhysicalEvidence": "holding",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 2018,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 12476,
+          "communication": "mismatch",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 14074,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 24178,
+          "communication": "matches",
+          "physical": "holding"
+        }
+      ],
+      "deciderCalls": 15,
+      "bedrockCalls": 7,
+      "activities": 32,
+      "runtimeErrors": [
+        {
+          "actor": "decider",
+          "step": "Score advisory completeness",
+          "phase": null
+        },
+        {
+          "actor": "agent",
+          "step": "Assistant execution failed",
+          "phase": "live"
+        }
+      ],
+      "bedrockUsage": {
+        "inputTokens": 11856,
+        "outputTokens": 1171,
+        "totalTokens": 13027
+      },
+      "bedrockUsageIncomplete": true,
+      "deciderServiceMedianMs": 3605.18,
+      "deciderRequestMedianMs": 3676.48,
+      "recordedAlertLatenciesMs": [
+        4090.47,
+        6127.41
+      ]
+    },
+    {
+      "case": "missing-evidence-v3-complete",
+      "scenario": "missing-evidence",
+      "preset": "complete",
+      "recordedFrames": 15,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "initialMismatchRecordedBeforeScriptEnded": true,
+        "unknownPositionCaptured": true,
+        "finalPhysicalEvidenceMatchesAvailability": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": true
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "matches",
+      "finalPhysicalEvidence": "holding",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 12574,
+          "communication": "mismatch",
+          "physical": "unverified"
+        },
+        {
+          "simulationTimeMs": 14179,
+          "communication": "checking",
+          "physical": "unverified"
+        },
+        {
+          "simulationTimeMs": 36029,
+          "communication": "matches",
+          "physical": "holding"
+        }
+      ],
+      "deciderCalls": 18,
+      "bedrockCalls": 10,
+      "activities": 44,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 19959,
+        "outputTokens": 1554,
+        "totalTokens": 21513
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3661.26,
+      "deciderRequestMedianMs": 3685.02,
+      "recordedAlertLatenciesMs": [
+        4158.97,
+        6145.44
+      ]
+    },
+    {
+      "case": "missing-evidence-v3-missed",
+      "scenario": "missing-evidence",
+      "preset": "missed",
+      "recordedFrames": 5,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "initialMismatchRecordedBeforeScriptEnded": true,
+        "unknownPositionCaptured": true,
+        "finalPhysicalEvidenceMatchesAvailability": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": true
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "mismatch",
+      "finalPhysicalEvidence": "unverified",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 2012,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 6087,
+          "communication": "checking",
+          "physical": "unverified"
+        },
+        {
+          "simulationTimeMs": 26019,
+          "communication": "mismatch",
+          "physical": "unverified"
+        }
+      ],
+      "deciderCalls": 5,
+      "bedrockCalls": 3,
+      "activities": 12,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 4620,
+        "outputTokens": 408,
+        "totalTokens": 5028
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3668.48,
+      "deciderRequestMedianMs": 3684.73,
+      "recordedAlertLatenciesMs": [
+        4178.74
+      ]
+    },
+    {
+      "case": "missing-evidence-v3-partial",
+      "scenario": "missing-evidence",
+      "preset": "partial",
+      "recordedFrames": 4,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "initialMismatchRecordedBeforeScriptEnded": true,
+        "unknownPositionCaptured": true,
+        "finalPhysicalEvidenceMatchesAvailability": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": false
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "matches",
+      "finalPhysicalEvidence": "unverified",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 2013,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 24043,
+          "communication": "matches",
+          "physical": "unverified"
+        }
+      ],
+      "deciderCalls": 7,
+      "bedrockCalls": 3,
+      "activities": 14,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 4676,
+        "outputTokens": 464,
+        "totalTokens": 5140
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3673.05,
+      "deciderRequestMedianMs": 3892.37,
+      "recordedAlertLatenciesMs": [
+        5774.8
+      ]
+    },
+    {
+      "case": "words-versus-actions-v3-complete",
+      "scenario": "words-versus-actions",
+      "preset": "complete",
+      "recordedFrames": 19,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "movementCaptured": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": false
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "unclear",
+      "finalPhysicalEvidence": "holding",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 2015,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 16145,
+          "communication": "matches",
+          "physical": "moving"
+        },
+        {
+          "simulationTimeMs": 20195,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 30167,
+          "communication": "unclear",
+          "physical": "holding"
+        }
+      ],
+      "deciderCalls": 12,
+      "bedrockCalls": 8,
+      "activities": 31,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 13958,
+        "outputTokens": 1127,
+        "totalTokens": 15085
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3546.82,
+      "deciderRequestMedianMs": 3609.54,
+      "recordedAlertLatenciesMs": [
+        4097.54,
+        7137.34
+      ]
+    },
+    {
+      "case": "words-versus-actions-v3-missed",
+      "scenario": "words-versus-actions",
+      "preset": "missed",
+      "recordedFrames": 10,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "movementCaptured": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": false
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "matches",
+      "finalPhysicalEvidence": "runway_entered",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 6081,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 14182,
+          "communication": "matches",
+          "physical": "moving"
+        },
+        {
+          "simulationTimeMs": 26113,
+          "communication": "matches",
+          "physical": "runway_entered"
+        }
+      ],
+      "deciderCalls": 8,
+      "bedrockCalls": 4,
+      "activities": 16,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 6791,
+        "outputTokens": 598,
+        "totalTokens": 7389
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3567.01,
+      "deciderRequestMedianMs": 3584.11,
+      "recordedAlertLatenciesMs": [
+        4128.93
+      ]
+    },
+    {
+      "case": "words-versus-actions-v3-partial",
+      "scenario": "words-versus-actions",
+      "preset": "partial",
+      "recordedFrames": 13,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "movementCaptured": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": false
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "unclear",
+      "finalPhysicalEvidence": "holding",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 2016,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 12508,
+          "communication": "matches",
+          "physical": "moving"
+        },
+        {
+          "simulationTimeMs": 20173,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 28042,
+          "communication": "unclear",
+          "physical": "holding"
+        }
+      ],
+      "deciderCalls": 9,
+      "bedrockCalls": 4,
+      "activities": 17,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 6879,
+        "outputTokens": 615,
+        "totalTokens": 7494
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3640.94,
+      "deciderRequestMedianMs": 3677.9,
+      "recordedAlertLatenciesMs": [
+        4190.96,
+        4197.42
+      ]
+    }
+  ],
+  "completedCases": 9,
+  "expectedCases": 9,
+  "limitations": [
+    "Recorded model outputs from fictional scripted scenarios, not real ATC incident recordings.",
+    "DynamoDB polling captures observed persisted revisions; transitions between polls may be missed.",
+    "A guard rejection or withheld advisory is distinct from a runtime failure."
+  ],
+  "capturedOn": "2026-10-17",
+  "frontendVerification": {
+    "realMismatchDisplayed": true,
+    "correctedReadbackDisplayed": true,
+    "physicalStatusSeparateFromCommunication": true,
+    "runtimeMetricsAndInspectorUpdated": true,
+    "activityPendingAndCompletedDisplayed": true,
+    "unauthenticatedSessionsHttpStatus": 401,
+    "spokenPlaybackRemoved": true,
+    "deployedTextOnlySetupVerifiedInBrowser": true
+  },
+  "totals": {
+    "recordings": 9,
+    "sampledFrames": 132,
+    "persistedObservations": 295,
+    "agentActivities": 219,
+    "deciderRequests": 97,
+    "bedrockCalls": 51,
+    "recordedBedrockTokens": 97439,
+    "usageCompleteForAllRuns": false,
+    "completedDeciderRequestMedianMs": 3679.64
+  },
+  "publicPlayerStatus": "Dataset prepared; static public player and judges Live Demo entry are a subsequent implementation step."
+}

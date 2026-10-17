@@ -1,0 +1,13 @@
+{
+  "repository": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "revision": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+  "source_revision": "930e6d5de16309be32579f5631a7369a3322140c",
+  "base_repository": "Qwen/Qwen3.5-2B-Base",
+  "base_revision": "b1485b2fa6dfa1287294f269f5fb618e03d52d7c",
+  "base_file_sha256": {
+    "LICENSE": "50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32",
+    "config.json": "ed1c1723241f23f7f4e23430759cbd7dcfb4103cbdfe052bfe7626b57c2615b4",
+    "model.safetensors.index.json": "74d2ddfe79f10f35b27b498632f02b97b60dd9ec39b35d7c5a890c399284e319",
+    "model.safetensors-00001-of-00001.safetensors": "928acbf11878c32185bbd863514d191769285065ab9ea14fbfe431303f5fdf2d"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "atc-assistant-public-replay-manifest/1",
+  "inference": "recorded-live",
+  "scenario": "fictional-scripted",
+  "replayInvokesModels": false,
+  "recordings": [
+    {
+      "recordingId": "incorrect-readback-v3-partial",
+      "file": "incorrect-readback-v3-partial.json",
+      "sha256": "4af5940527f2951da6cab6a1497f143f06b6e8f2e5dc2256d2578ecc3a20e6e7",
+      "bytes": 98863,
+      "scenarioId": "incorrect-readback",
+      "scenarioVersion": "3",
+      "preset": "partial",
+      "summary": {
+        "sessionStatus": "completed",
+        "assessmentStatus": "completed",
+        "frameCount": 4,
+        "elapsedMs": 40515.36,
+        "recordedObservationCount": 29,
+        "firstObservedAtMs": 14005.1,
+        "maxObservedFrameGapMs": 22057.77,
+        "completedDecisions": 8,
+        "completedBedrockCalls": 3,
+        "publishedAdvisories": 1,
+        "runtimeErrors": 0,
+        "errorTraces": 0,
+        "bedrockUsage": {
+          "inputTokens": 4680,
+          "outputTokens": 470,
+          "totalTokens": 5150
+        },
+        "bedrockUsageIncomplete": false,
+        "observedPendingAssessments": 3,
+        "observedRunningTraces": 3,
+        "allDeciderStartsObserved": false,
+        "allActivityStartsObserved": false,
+        "verifiedLiveInference": true,
+        "quality": "complete"
+      }
+    }
+  ]
+}

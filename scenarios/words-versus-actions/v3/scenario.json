@@ -1,0 +1,82 @@
+{
+  "id": "words-versus-actions",
+  "version": "3",
+  "title": "Words versus actions",
+  "description": "The readback matches, but AIR123 starts moving. The assistant compares the exchange with the available surface observation.",
+  "objective": "Flag observed movement that conflicts with a hold instruction even when the readback matches.",
+  "durationMs": 38000,
+  "initialDistanceM": 50,
+  "observationGap": false,
+  "initialSetup": {
+    "airport": "Fictional demonstration airport",
+    "runway": "36",
+    "taxiway": "Alpha",
+    "aircraft": "AIR123",
+    "reciprocalRunway": "18"
+  },
+  "script": [
+    {
+      "id": "instruction",
+      "atMs": 2000,
+      "type": "trainee_instruction",
+      "actor": "trainee",
+      "text": "AIR123, hold short of runway 36.",
+      "action": "hold"
+    },
+    {
+      "id": "readback",
+      "atMs": 5000,
+      "type": "pilot_readback",
+      "actor": "pilot",
+      "text": "Holding short of runway 36, AIR123."
+    },
+    {
+      "id": "movement-fault",
+      "atMs": 11000,
+      "type": "simulator_action",
+      "actor": "simulator",
+      "text": "AIR123 starts moving despite the hold instruction.",
+      "action": "move"
+    },
+    {
+      "id": "stop",
+      "atMs": 19000,
+      "type": "trainee_instruction",
+      "actor": "trainee",
+      "text": "AIR123, stop immediately. Hold position.",
+      "action": "hold",
+      "presets": [
+        "partial",
+        "complete"
+      ]
+    },
+    {
+      "id": "stop-readback",
+      "atMs": 23000,
+      "type": "pilot_readback",
+      "actor": "pilot",
+      "text": "Stopping, holding position, AIR123.",
+      "presets": [
+        "partial",
+        "complete"
+      ]
+    },
+    {
+      "id": "verify",
+      "atMs": 30000,
+      "type": "trainee_observation_check",
+      "actor": "trainee",
+      "text": "Checks that AIR123 stopped before the holding point.",
+      "presets": [
+        "complete"
+      ]
+    }
+  ],
+  "learningObjectives": [
+    "Readback is not physical compliance",
+    "React to observed conflicting movement",
+    "Verify the result"
+  ],
+  "sourceReferences": [],
+  "note": "Experimental ATC assistance demonstration with scripted human controller and pilot roles. Only scenario-allowed observations are available to the assistant. Legacy event names are retained for saved-session compatibility."
+}

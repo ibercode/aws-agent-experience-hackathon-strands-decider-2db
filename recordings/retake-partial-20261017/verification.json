@@ -1,0 +1,73 @@
+{
+  "source": "deployed-live-retake",
+  "cases": [
+    {
+      "case": "incorrect-readback-v3-partial",
+      "scenario": "incorrect-readback",
+      "preset": "partial",
+      "recordedFrames": 4,
+      "recordingComplete": true,
+      "checks": {
+        "sessionCompleted": true,
+        "realProviders": true,
+        "bedrockUsageRecorded": true,
+        "noUnfinishedActivity": true,
+        "noUnfinishedDecisions": true,
+        "decisionVisibleBeforeScriptEnded": true,
+        "pendingActivityCaptured": true,
+        "activityCountsProgressed": true,
+        "decisionCountsProgressed": true,
+        "evidenceReferencesResolve": true,
+        "initialMismatchRecordedBeforeScriptEnded": true
+      },
+      "captureCoverage": {
+        "mismatchVisibleInSampledFrames": true
+      },
+      "executionClean": true,
+      "advisoryOutcome": "published-current",
+      "assessmentStatus": "completed",
+      "finalCommunication": "matches",
+      "finalPhysicalEvidence": "holding",
+      "statusChanges": [
+        {
+          "simulationTimeMs": 12361,
+          "communication": "mismatch",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 14160,
+          "communication": "checking",
+          "physical": "holding"
+        },
+        {
+          "simulationTimeMs": 34000,
+          "communication": "matches",
+          "physical": "holding"
+        }
+      ],
+      "deciderCalls": 8,
+      "bedrockCalls": 3,
+      "activities": 15,
+      "runtimeErrors": [],
+      "bedrockUsage": {
+        "inputTokens": 4680,
+        "outputTokens": 470,
+        "totalTokens": 5150
+      },
+      "bedrockUsageIncomplete": false,
+      "deciderServiceMedianMs": 3676.04,
+      "deciderRequestMedianMs": 3710.17,
+      "recordedAlertLatenciesMs": [
+        4046.83,
+        5560.66
+      ]
+    }
+  ],
+  "completedCases": 1,
+  "expectedCases": 1,
+  "limitations": [
+    "Recorded model outputs from fictional scripted scenarios, not real ATC incident recordings.",
+    "DynamoDB polling captures observed persisted revisions; transitions between polls may be missed.",
+    "A guard rejection or withheld advisory is distinct from a runtime failure."
+  ]
+}

@@ -1,0 +1,5 @@
+# Upstream's documented macOS inference versions, with the runtime pinned to a commit.
+torch==2.7.1
+transformers==5.17.0
+peft==0.21.0
+strands-decider @ git+https://github.com/strands-labs/strands-decider.git@930e6d5de16309be32579f5631a7369a3322140c

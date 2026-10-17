@@ -1,0 +1,17 @@
+{
+  "id": "incorrect-readback", "version": "1", "title": "Incorrect readback",
+  "description": "AIR123 repeats a different instruction. The trainee may miss, partially correct or fully resolve the mismatch.",
+  "objective": "Distinguish the original communication error, its correction and verified physical compliance.",
+  "durationMs": 24000, "initialDistanceM": 50, "observationGap": false,
+  "initialSetup": {"airport": "Fictional training airport", "runway": "27", "taxiway": "Alpha", "aircraft": "AIR123"},
+  "script": [
+    {"id": "instruction", "atMs": 2000, "type": "trainee_instruction", "actor": "trainee", "text": "AIR123, hold short of runway 27.", "action": "hold"},
+    {"id": "wrong-readback", "atMs": 5000, "type": "pilot_readback", "actor": "pilot", "text": "Lining up runway 27, AIR123."},
+    {"id": "correction", "atMs": 9000, "type": "trainee_instruction", "actor": "trainee", "text": "Negative, AIR123. Hold short of runway 27.", "action": "hold", "presets": ["partial", "complete"]},
+    {"id": "corrected-readback", "atMs": 12000, "type": "pilot_readback", "actor": "pilot", "text": "Holding short of runway 27, AIR123.", "presets": ["partial", "complete"]},
+    {"id": "verify", "atMs": 17000, "type": "trainee_observation_check", "actor": "trainee", "text": "Checks the surface observation for AIR123.", "presets": ["complete"]}
+  ],
+  "learningObjectives": ["Notice incorrect readback", "Recognise a later correction", "Separate pilot words from observed movement"],
+  "sourceReferences": ["https://www.faa.gov/Air_Traffic/publications/atpubs/atc_html/chap3_section_7.html"],
+  "note": "Fictional experimental training example, not an operational procedure or incident reconstruction."
+}
